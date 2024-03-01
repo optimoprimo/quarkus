@@ -1,4 +1,4 @@
-Proyecto de Prueba para despliegue openshift
+Proyecto de Prueba para despliegues openshift
 
 Estrategia docker
 
