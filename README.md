@@ -15,8 +15,6 @@
 
 ## Mediante libreria de openshift
 
-    Observar las propiedades
-
 ````cmd
-    mvn clean package
+    mvn clean package -D"quarkus.kubernetes.deploy"=true -D"quarkus.kubernetes-client.master-url"=SERVER -D"quarkus.kubernetes-client.token"=TOKEN
 ````
