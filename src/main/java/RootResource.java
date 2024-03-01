@@ -5,8 +5,8 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("/hello")
-public class HelloResource {
+@Path("/")
+public class RootResource {
     
     @ConfigProperty(name="app.entorno")
     String entorno;
@@ -14,6 +14,6 @@ public class HelloResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello(){
-        return entorno;
+        return "Esta aplicación se ha desplegado en un entorno: " + entorno;
     }
 }
