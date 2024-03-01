@@ -6,3 +6,9 @@ Estrategia docker
     oc new-app --name=ejemplo-quarkus --code=https://github.com/optimoprimo/quarkus
 ````
 
+Estrategia source
+
+````cmd
+    oc import-image openjdk-17:1.11 --from registry.access.redhat.com/ubi8/openjdk-17:1.11 --confirm
+    oc new-app --name=ejemplo-quarkus --code=https://github.com/optimoprimo/quarkus --strategy=source -i=openjdk-17:1.11
+````
