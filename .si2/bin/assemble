@@ -1,15 +1,22 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
-source "${JBOSS_CONTAINER_UTIL_LOGGING_MODULE}/logging.sh"
-source "${JBOSS_CONTAINER_MAVEN_S2I_MODULE}/maven-s2i"
+# Define variables
+APP_DIR=${1:-"."}
+OUTPUT_DIR=${2:-"/tmp/artifacts"}
 
-# include our s2i_core_*() overrides/extensions
-source "${JBOSS_CONTAINER_JAVA_S2I_MODULE}/s2i-core-hooks"
+# Cambia al directorio de la aplicación
+cd $APP_DIR
 
-# inject our overridden maven_s2i_*() functions
-source "${JBOSS_CONTAINER_JAVA_S2I_MODULE}/maven-s2i-overrides"
+# Compila la aplicación Quarkus
+echo "Compilando la aplicación Quarkus..."
+./mvnw clean package -DskipTests=true
 
-# invoke the build
-maven_s2i_build
+# Copia el archivo JAR generado al directorio de salida
+echo "Copiando el archivo JAR generado al directorio de salida..."
+mkdir -p $OUTPUT_DIR
+cp target/*-runner.jar $OUTPUT_DIR/app.jar
+
+# Salida de información
+echo "Proceso de ensamblaje completado."
