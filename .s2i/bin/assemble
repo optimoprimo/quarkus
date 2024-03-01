@@ -11,7 +11,7 @@ cd $APP_DIR
 
 # Compila la aplicación Quarkus
 echo "Compilando la aplicación Quarkus..."
-./mvnw clean package -DskipTests=true
+mvn clean package -DskipTests=true
 
 # Copia el archivo JAR generado al directorio de salida
 echo "Copiando el archivo JAR generado al directorio de salida..."
