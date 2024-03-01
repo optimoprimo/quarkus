@@ -1,7 +1,7 @@
 set -e
 
 # Define variables
-APP_DIR=${1:-"/tmp/src"}
+APP_DIR=${1:-"/tmp/src/target"}
 JAVA_OPTS=${JAVA_OPTS:-"-Xmx512m -DENTORNO=SI2"}
 
 # Cambia al directorio de la aplicación
@@ -9,4 +9,4 @@ cd $APP_DIR
 
 # Ejecuta la aplicación Quarkus
 echo "Ejecutando la aplicación Quarkus..."
-java $JAVA_OPTS -jar app.jar
+java $JAVA_OPTS -jar ejemplo-quarkus-1.0.0.jar
