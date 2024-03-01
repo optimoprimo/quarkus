@@ -1,7 +1,7 @@
 set -e
 
 # Define variables
-APP_DIR=${1:-"../../"}
+APP_DIR=${1:-"/tmp"}
 JAVA_OPTS=${JAVA_OPTS:-"-Xmx512m -DENTORNO=SI2"}
 
 # Cambia al directorio de la aplicación
