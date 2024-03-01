@@ -2,8 +2,7 @@ set -e
 
 # Define variables
 APP_DIR=${1:-"/tmp/src/target/quarkus-app"}
-ENTORNO=SI2
-JAVA_OPTS=${JAVA_OPTS:-"-Xmx512m"}
+JAVA_OPTS=${JAVA_OPTS:-"-Xmx512m -DENTORNO=SI2"}
 
 # Cambia al directorio de la aplicación
 cd $APP_DIR
