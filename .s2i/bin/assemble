@@ -3,20 +3,12 @@
 set -e
 
 # Define variables
-APP_DIR=${1:-"."}
-OUTPUT_DIR=${2:-"/tmp/artifacts"}
+APP_DIR=${1:-"../../"}
 
 # Cambia al directorio de la aplicación
 cd $APP_DIR
 
 # Compila la aplicación Quarkus
 echo "Compilando la aplicación Quarkus..."
-mvn clean package -DskipTests=true
-
-# Copia el archivo JAR generado al directorio de salida
-echo "Copiando el archivo JAR generado al directorio de salida..."
-mkdir -p $OUTPUT_DIR
-cp target/*-runner.jar $OUTPUT_DIR/app.jar
-
-# Salida de información
+mvn clean package
 echo "Proceso de ensamblaje completado."
