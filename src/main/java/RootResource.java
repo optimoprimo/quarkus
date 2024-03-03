@@ -14,6 +14,6 @@ public class RootResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello(){
-        return "Hola,  esta aplicación se ha desplegado en un entorno: " + entorno;
+        return "Hola, esta aplicación se ha desplegado en un entorno: " + entorno;
     }
 }
