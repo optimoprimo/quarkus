@@ -13,9 +13,12 @@ public class GreetingResource {
     @ConfigProperty(name = "propertie")
     String propertie;
 
+    @ConfigProperty(name = "configmap")
+    String configmap;
+
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return propertie;
+        return propertie + configmap;
     }
 }
