@@ -3,7 +3,7 @@ COPY pom.xml .
 COPY src ./src
 RUN mvn clean package
 
-FROM registry.access.redhat.com/ubi8/openjdk-17:1.12
+FROM openjdk-17:1.12
 
 ENV LANGUAGE='en_US:en'
 
