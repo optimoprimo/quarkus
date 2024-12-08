@@ -3,7 +3,7 @@ COPY pom.xml .
 COPY src ./src
 RUN mvn clean package
 
-FROM dev/openjdk-17:1.12
+FROM devs/openjdk-17:1.12
 
 ENV LANGUAGE='en_US:en'
 
