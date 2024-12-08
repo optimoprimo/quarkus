@@ -1,4 +1,4 @@
-FROM maven:3.8.3-openjdk-17 AS builder
+FROM eclipse-temurin:11-jdk as builder
 COPY pom.xml .
 COPY src ./src
 RUN mvn clean package
