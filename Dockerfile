@@ -1,9 +1,9 @@
-FROM maven:3.9.4-eclipse-temurin-17 AS builder
+FROM maven:3.8.3-openjdk-17 AS builder
 COPY pom.xml .
 COPY src ./src
 RUN mvn clean package
 
-FROM registry.access.redhat.com/ubi9/openjdk-17:latest
+FROM registry.access.redhat.com/ubi8/openjdk-17:1.12
 
 ENV LANGUAGE='en_US:en'
 
