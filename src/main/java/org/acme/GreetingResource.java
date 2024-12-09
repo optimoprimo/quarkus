@@ -1,5 +1,8 @@
 package org.acme;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import jakarta.ws.rs.GET;
@@ -17,8 +20,11 @@ public class GreetingResource {
     String configmap;
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return propertie + configmap;
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String,String> hello() {
+        var mapa = new HashMap<String,String>();
+        mapa.put("CONFIGMAP", configmap);
+        mapa.put("SECRETO", propertie);
+        return mapa;
     }
 }
