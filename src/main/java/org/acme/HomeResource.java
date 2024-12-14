@@ -11,20 +11,20 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 @Path("/")
-public class GreetingResource {
+public class HomeResource {
 
-    @ConfigProperty(name = "propertie")
-    String propertie;
+    @ConfigProperty(name = "properti_one")
+    String properti_one;
 
-    @ConfigProperty(name = "configmap")
-    String configmap;
+    @ConfigProperty(name = "properti_two")
+    String properti_two;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Map<String,String> hello() {
+    public Map<String,String> home() {
         var mapa = new HashMap<String,String>();
-        mapa.put("CONFIGMAP", configmap);
-        mapa.put("SECRETO", propertie);
+        mapa.put("PROPERTI_ONE", properti_one);
+        mapa.put("PROPERTI_TWO", properti_two);
         return mapa;
     }
 }
